@@ -6,5 +6,12 @@ export default defineConfig({
   plugins: [tsconfigPaths(), react()],
   test: {
     environment: "jsdom",
+   setupFiles: "./vitest.setup.ts",
+   globals: true,
+    server: {
+      deps: {
+        inline: ['html-encoding-sniffer'],
+      },
+    },
   },
 });
